@@ -1,0 +1,60 @@
+{
+  // configuration params for logging
+
+  //
+  "operation": {
+    // path to base logging directory
+    "base_log_dir": "",
+    "num_steps": null,
+    "num_epochs": null,
+    "batch_size": 12,
+    "num_gpus": 4,
+  },
+  "data_source":
+  {
+    "train":
+    {
+      "source" : "",
+      "num_examples" :null
+    },
+    "test":
+    {
+      "source" : "",
+      "num_examples" :null
+    }
+  },
+
+  "data_provider": {
+    "file": "",
+    "params": {}
+  },
+  "model": {
+    "file": "",
+    "params": {}
+  },
+  // configuration for restoring models
+  "restore": {
+    // file path to the checkpoint file
+    "checkpoint": null,
+    // list of string scopes to include
+    "include_scopes": null,
+    "exclude_scopes": null
+  },
+  //
+  "optimizer": {
+    "class": "rmsprop",
+    "params": {
+      "rmsprop_decay": 0.9,
+      "rmsprop_momentum" : 0.9,
+      "opt_epsilon" :1.0
+    }
+  },
+  "learning_rate": {
+    "class": "exponential",
+    "learning_rate" : 0.001,
+    "params": {      
+      "epochs_per_decay" : 5,
+      "learning_rate_decay_factor" :0.001,
+    }
+  }
+}
